@@ -1,0 +1,16 @@
+# Makefile for Programming Challenge 2
+
+CC = gcc
+CFLAGS = -Wall -pthread
+TARGETS = server client
+
+all: $(TARGETS)
+
+server: HTTP_Server.c
+	$(CC) $(CFLAGS) -o server HTTP_Server.c
+
+client: HTTP_Client.c
+	$(CC) $(CFLAGS) -o client HTTP_Client.c
+
+clean:
+	rm -f server client
